@@ -1,12 +1,15 @@
 <template>
   <button
-    class="flex h-7 w-full cursor-pointer items-center rounded text-gray-700 duration-300 ease-in-out focus:outline-none focus:transition-none focus-visible:rounded focus-visible:ring-2 focus-visible:ring-gray-400"
-    :class="isActive ? 'bg-white shadow-sm' : 'hover:bg-gray-100'"
+    class="flex h-9 w-full cursor-pointer items-center rounded-lg duration-300 ease-in-out px-2 text-sm font-medium transition-all"
+    :class="[
+      isActive
+        ? 'bg-[#b31313] text-white border-l-4 border-[#7e1010]'
+        : 'hover:bg-[#faebeb] text-gray-800 border-l-4 border-transparent',
+      'focus:outline-none focus:ring-2 focus:ring-[#b31313]'
+    ]"
     @click="handleClick"
   >
-    <div
-      class="flex w-full items-center justify-between duration-300 ease-in-out p-2"
-    >
+    <div class="flex w-full items-center justify-between duration-300 ease-in-out">
       <div class="flex items-center">
         <Tooltip
           :text="label"
@@ -19,10 +22,9 @@
               <FeatherIcon
                 v-if="typeof icon == 'string'"
                 :name="icon"
-                class="h-4.5 w-4.5 text-gray-700"
+                :class="isActive ? 'text-white' : 'text-[#b31313]'"
               />
-
-              <component :is="icon" v-else class="h-4.5 w-4.5 text-gray-700" />
+              <component :is="icon" v-else :class="isActive ? 'text-white' : 'text-[#b31313]'" />
             </span>
           </slot>
         </Tooltip>
