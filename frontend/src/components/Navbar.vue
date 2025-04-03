@@ -2,7 +2,7 @@
   <nav
     ondragstart="return false;"
     ondrop="return false;"
-    class="bg-white top-0 border-b min-w-full"
+    class="bg-gradient-to-r from-black via-[#7d0b0b] to-[#b31313] text-white top-0 border-b min-w-full"
   >
     <div
       class="mx-auto pl-4 py-2.5 pr-2 h-12 z-10 flex items-center justify-between"
