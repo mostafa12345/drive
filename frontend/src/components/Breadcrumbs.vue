@@ -32,12 +32,7 @@
       <router-link
         v-for="(item, index) in crumbs"
         :key="item.label"
-        class="text-md line-clamp-1 sm:text-lg font-medium cursor-pointer"
-        :class="[
-          $store.state.currentBreadcrumbs.length === 1
-            ? 'text-black'
-            : ' hover:text-gray-800 text-gray-600',
-        ]"
+        class="text-md line-clamp-1 sm:text-lg font-medium cursor-pointer text-white hover:text-gray-100"
         :to="item.route"
       >
         <span> {{ item.label }}</span>
@@ -47,7 +42,7 @@
 
     <span
       v-if="$store.state.currentBreadcrumbs.length > 1"
-      class="text-black text-md line-clamp-1 sm:text-lg font-medium cursor-pointer"
+      class="text-white text-md line-clamp-1 sm:text-lg font-medium cursor-pointer"
       @click="canShowRenameDialog"
     >
       <span class="ml-1">/</span>
@@ -66,6 +61,7 @@
     "
   />
 </template>
+
 <script>
 import RenameDialog from "@/components/RenameDialog.vue"
 import { Dropdown } from "frappe-ui"
